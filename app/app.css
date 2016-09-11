@@ -1,0 +1,8 @@
+body {
+  padding-top: 20px;
+}
+
+/* suit list page */
+select[title="sort"] {
+  margin-bottom: 1.5em;
+}

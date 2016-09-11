@@ -1,0 +1,17 @@
+{
+  "name": "tutubluecat",
+  "description": "A AngularJS app for tutublue catalogue",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dbwebconsulting/tutubluecat#readme",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-animate": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x",
+    "jquery": "2.2.x"
+  }
+}
