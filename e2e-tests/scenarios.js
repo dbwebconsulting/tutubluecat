@@ -11,7 +11,7 @@ describe('SuitCat Application', function () {
       browser.get('index.html');
     });
 
-    it('should filter the phone list as user types into the search box', function () {
+    it('should filter the suit list as user types into the search box', function () {
       var suitList = element.all(by.repeater('suit in $ctrl.suits'));
       var query = element(by.model('$ctrl.query'));
 
@@ -56,7 +56,15 @@ describe('SuitCat Application', function () {
         'Kaleidoscope Short Beach Suit',
         'Sunshine Short Beach Suit'
       ]);
-    });/**/
+    });
+
+    it('should render suit specific links', function () {
+      var query = element(by.model('$ctrl.query'));
+      query.sendKeys('Aqualung');
+
+      element.all(by.css('.suits li a')).first().click();
+      expect(browser.getLocationAbsUrl()).toBe('/suits/aqualung-long-beach-suit');
+    });
 
   });
 

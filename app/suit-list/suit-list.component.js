@@ -1,5 +1,5 @@
 /**
- * Created by dave on 9/6/2016.
+ * Created by dave on 9/7/2016.
  */
 "use strict";
 
@@ -14,9 +14,9 @@ angular.
         self.orderProp = 'age';
 
 
-$http.get('suits/suits.json').then(function (response) {
-        self.suits = response.data;
-        //self.suits = response.data.slice(0, 5);  limit result set
+        $http.get('suits/suits.json').then(function (response) {
+          self.suits = response.data;
+          //self.suits = response.data.slice(0, 5);  limit result set
         });
       }
     ]
