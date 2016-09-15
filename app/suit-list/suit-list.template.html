@@ -21,10 +21,10 @@
       <!-- body content -->
       <ul class="suits">
         <li ng-repeat="suit in $ctrl.suits | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-          <a href="#/suits/{{suit.id}}" class="thumb">
+          <a href="#!/suits/{{suit.id}}" class="thumb">
             <img ng-src="{{suit.imageUrl}}" title="{{suit.name}}" />
           </a>
-          <a href="#/suits/{{suit.id}}">{{suit.name}}</a>
+          <a href="#!/suits/{{suit.id}}">{{suit.name}}</a>
           <p>{{suit.snippet}}</p>
         </li>
       </ul>

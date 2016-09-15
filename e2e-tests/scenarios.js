@@ -5,10 +5,15 @@
 
 describe('SuitCat Application', function () {
 
-  describe('suitList', function () {
+  it('should redirect `index.html` to `index.html#!/suits', function () {
+    browser.get('index.html');
+    expect(browser.getLocationAbsUrl()).toBe('/suits');
+  });
+
+  describe('View: Suit list', function () {
 
     beforeEach(function () {
-      browser.get('index.html');
+      browser.get('index.html#!/suits');
     });
 
     it('should filter the suit list as user types into the search box', function () {
@@ -64,6 +69,18 @@ describe('SuitCat Application', function () {
 
       element.all(by.css('.suits li a')).first().click();
       expect(browser.getLocationAbsUrl()).toBe('/suits/aqualung-long-beach-suit');
+    });
+
+  });
+
+  describe('View: Suit detail', function () {
+
+    beforeEach(function () {
+      browser.get('index.html#!/suits/aqualung-long-beach-suit');
+    });
+
+    it('should display placeholder page with `suitId`', function () {
+      expect(element(by.binding('$ctrl.suitId')).getText()).toBe('aqualung-long-beach-suit');
     });
 
   });

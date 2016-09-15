@@ -5,6 +5,8 @@
 
 // define the suitcatApp module
 angular.module('suitcatApp', [
-    // depends on the 'suitList' module
+    // depends on various modules
+    'ngRoute',
+    'suitDetail',
     'suitList'
 ]);
