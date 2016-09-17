@@ -1,8 +1,12 @@
 body {
-  padding-top: 20px;
+  padding: 20px;
 }
 
-/* suit list page */
+h1 {
+  border-bottom: solid #666 1px;
+}
+
+/* View: suit list */
 select[title="sort"] {
   margin-bottom: 1.5em;
 }
@@ -14,13 +18,13 @@ select[title="sort"] {
 
 .suits li {
   clear: both;
-  height: 115px;
+  height: 415px;
   padding-top: 15px;
 }
 
 .thumb {
   float: left;
-  height: 100px;
+  height: 150px;
   margin: -0.5em 1em 1.5em 0;
   padding-bottom: 1em;
   width: 100px;
@@ -29,4 +33,64 @@ select[title="sort"] {
 .thumb img {
   max-width: 100%;
   max-height: 100%;
+}
+
+/* View: Suit Detail */
+.suit {
+  background-color: #fff;
+  border: solid #000 1px;
+  float: left;
+  height: 575px; /*750px*/
+  margin-bottom: 1em;
+  margin-right: 3em;
+  padding: 2em;
+  width: 400px; /*500px*/
+  clear: both;
+}
+
+.suit-thumbs {
+  list-style: none;
+  margin: 0;
+}
+
+.suit-thumbs img {
+  height: 125px;
+  padding: 1em;
+  width: 100px;
+}
+
+.suit-thumbs li {
+  background-color: #fff;
+  border: solid #000 1px;
+  display: inline-block;
+  margin: 1em;
+}
+
+.specs dt {
+  font-weight: bold;
+}
+
+.specs > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+}
+
+.specs > li > span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+p:first-child {
+  text-transform: uppercase;
+}
+
+figure {
+  float: left;
+  /*display: inline-block;*/
+  width: 410px;
+  height: 625px;
+  margin-right: 10px;
+  /*margin-inside: 10px;
+  border: 1px dashed #73AD21*/;
 }

@@ -1,0 +1,50 @@
+<figure>
+  <img src="{{$ctrl.suit.images[0]}}" title="{{$ctrl.suit.name}}" class="suit" />
+  <figcaption>{{$ctrl.suit.caption}}</figcaption>
+</figure>
+
+<h1>{{$ctrl.suit.name}}</h1>
+
+<p>{{$ctrl.suit.description}}</p>
+
+<ul class="suit-thumbs">
+  <li ng-repeat="img in $ctrl.suit.images">
+    <img ng-src="{{img}}" title="{{$ctrl.suit.name}}" />
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Availability</span>
+    <dl>
+      <dd ng-repeat="availability in $ctrl.suit.availability">{{availability}}</dd>
+      <dt>Ready to Ship: {{$ctrl.suit.availability.shipDate}}</dt>
+    </dl>
+  </li>
+
+  <li>
+    <span>SKU</span>
+    <dl>
+      <dd>{{$ctrl.suit.sku.skuValue}}</dd>
+    </dl>
+  </li>
+
+  <li>
+    <span>{{$ctrl.suit.name}}</span>
+    <span>Fabric</span>
+    <ul>
+      <li ng-repeat="fabric in $ctrl.suit.fabric">{{fabric}}</li>
+    </ul>
+  </li>
+  <li>
+    <span>Price</span>
+    <dl>
+      <dd>{{$ctrl.suit.price}}</dd>
+    </dl>
+  </li>
+</ul>
+
+<div>
+  <p>return and refund policy</p>
+  <p>See Customer Care page for Return / Exchange Policy</p>
+</div>

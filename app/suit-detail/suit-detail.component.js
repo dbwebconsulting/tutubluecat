@@ -7,10 +7,15 @@
 angular.
   module('suitDetail').
   component('suitDetail', {
-    template: 'TBD: Detail view for <span>{{$ctrl.suitId}}</span>',
-    controller: ['$routeParams',
-      function SuitDetailController($routeParams) {
-        this.suitId = $routeParams.suitId;
+    templateUrl: 'suit-detail/suit-detail.template.html',
+    controller: ['$http', '$routeParams',
+      function SuitDetailController($http, $routeParams) {
+        var self = this;
+
+        $http.get('suits/' + $routeParams.suitId + '.json').
+        then(function(response) {
+          self.suit = response.data;
+        });
       }
     ]
   });

@@ -26,7 +26,7 @@ describe('SuitCat Application', function () {
       expect(suitList.count()).toBe(5);
 
       query.clear();
-      query.sendKeys('Aqualung');
+      query.sendKeys('Sunshine');
       expect(suitList.count()).toBe(2);
     });
 
@@ -65,10 +65,10 @@ describe('SuitCat Application', function () {
 
     it('should render suit specific links', function () {
       var query = element(by.model('$ctrl.query'));
-      query.sendKeys('Aqualung');
+      query.sendKeys('Sunshine');
 
       element.all(by.css('.suits li a')).first().click();
-      expect(browser.getLocationAbsUrl()).toBe('/suits/aqualung-long-beach-suit');
+      expect(browser.getLocationAbsUrl()).toBe('/suits/sunshine-long-beach-suit');
     });
 
   });
@@ -76,11 +76,17 @@ describe('SuitCat Application', function () {
   describe('View: Suit detail', function () {
 
     beforeEach(function () {
-      browser.get('index.html#!/suits/aqualung-long-beach-suit');
+      browser.get('index.html#!/suits/sunshine-long-beach-suit');
     });
 
-    it('should display placeholder page with `suitId`', function () {
-      expect(element(by.binding('$ctrl.suitId')).getText()).toBe('aqualung-long-beach-suit');
+    it('should display the `sunshine-long-beach-suit` page', function () {
+
+      expect(element(by.binding('$ctrl.suit.name')).getText()).toBe('Sunshine Long Beach Suit');
+    });
+
+    it('should display thumbnail images', function () {
+      var imgCount = element.all(by.css('.suit-thumbs img'));
+      expect(imgCount.count()).toBe(7);
     });
 
   });
