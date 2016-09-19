@@ -8,13 +8,17 @@ angular.
   module('suitDetail').
   component('suitDetail', {
     templateUrl: 'suit-detail/suit-detail.template.html',
-    controller: ['$http', '$routeParams',
-      function SuitDetailController($http, $routeParams) {
+    controller: ['$http', '$routeParams', '$scope',
+      function SuitDetailController($http, $routeParams, $scope) {
         var self = this;
 
         $http.get('suits/' + $routeParams.suitId + '.json').
         then(function(response) {
           self.suit = response.data;
+
+        $scope.mydate = new Date();
+        var numberOfDaysToAdd = 3;
+        $scope.shipdate = $scope.mydate.setDate($scope.mydate.getDate() + numberOfDaysToAdd);
         });
       }
     ]

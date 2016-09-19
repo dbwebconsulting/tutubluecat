@@ -7,6 +7,7 @@
 angular.module('suitcatApp', [
     // depends on various modules
     'ngRoute',
+    'core',
     'suitDetail',
     'suitList'
 ]);

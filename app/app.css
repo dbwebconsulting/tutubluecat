@@ -94,3 +94,11 @@ figure {
   /*margin-inside: 10px;
   border: 1px dashed #73AD21*/;
 }
+
+.green, .red { font-weight: bold; }
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
