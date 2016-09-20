@@ -8,12 +8,16 @@ describe('suitDetail', function () {
   // test the controller
   describe('SuitDetailController', function () {
     var $httpBackend, ctrl;
+    var xyzSuitData = {
+      name: 'suit xyz',
+      images: ['image/url1.png', 'image/url2.png']
+    };
 
     beforeEach(inject(function ($componentController,
     _$httpBackend_, $routeParams) {
       $httpBackend = _$httpBackend_;
 
-    $httpBackend.expectGET('suits/xyz.json').respond({name: 'suit xyz'});
+      $httpBackend.expectGET('suits/xyz.json').respond(xyzSuitData);
 
       $routeParams.suitId = 'xyz';
 
@@ -24,7 +28,7 @@ describe('suitDetail', function () {
       expect(ctrl.suit).toBeUndefined();
 
       $httpBackend.flush();
-      expect(ctrl.suit).toEqual({name: 'suit xyz'});
+      expect(ctrl.suit).toEqual(xyzSuitData);
     });
 
   });

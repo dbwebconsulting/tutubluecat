@@ -1,5 +1,5 @@
 <figure>
-  <img src="{{$ctrl.suit.images[0]}}" title="{{$ctrl.suit.name}}" class="suit" />
+  <img src="{{$ctrl.mainImageUrl}}" title="{{$ctrl.suit.name}}" class="suit" />
   <figcaption>{{$ctrl.suit.caption}}</figcaption>
 </figure>
 
@@ -7,9 +7,10 @@
 
 <p>{{$ctrl.suit.description}}</p>
 
+<p class="thumbnail-msg">{{$ctrl.message}}&nbsp;</p>
 <ul class="suit-thumbs">
   <li ng-repeat="img in $ctrl.suit.images">
-    <img ng-src="{{img}}" title="{{$ctrl.suit.name}}" />
+    <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" ng-mouseover="$ctrl.onMouseover(img)" title="{{$ctrl.suit.name}}" />
   </li>
 </ul>
 
@@ -17,8 +18,8 @@
   <li>
     <span>Availability</span>
     <dl>
-      <dd style="display: inline">{{$ctrl.suit.availability.available | checkmark}}</dd> <!-- ng-repeat="availability in $ctrl.suit.availability"-->
-      <dd style="display: inline">{{$ctrl.suit.availability.available}}</dd>
+      <dd class="availability">{{$ctrl.suit.availability.available | checkmark}}</dd> <!-- ng-repeat="availability in $ctrl.suit.availability"-->
+      <dd class="availability">{{$ctrl.suit.availability.available}}</dd>
       <dt>Ready to Ship: {{shipdate | date:'MM/dd/yyyy'}}</dt>
     </dl>
   </li>
@@ -49,3 +50,5 @@
   <p>return and refund policy</p>
   <p>See Customer Care page for Return / Exchange Policy</p>
 </div>
+
+<p><a href="#!/suits">Return to suit list</a></p>

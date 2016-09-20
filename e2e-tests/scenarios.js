@@ -89,6 +89,23 @@ describe('SuitCat Application', function () {
       expect(imgCount.count()).toBe(7);
     });
 
+    it('should display the first suit image as the main suit image', function () {
+      var mainImage = element(by.css('img.suit'));
+
+      expect(mainImage.getAttribute('src')).toMatch(/img\/suits\/sunshine-long-beach-suit.0.jpg/);
+    });
+
+    it('should swap the main image when clicking on a thumbnail image', function () {
+      var mainImage = element(by.css('img.suit'));
+      var thumbnails = element.all(by.css('.suit-thumbs img'));
+
+      thumbnails.get(2).click();
+      expect(mainImage.getAttribute('src')).toMatch(/img\/suits\/sunshine-long-beach-suit.2.jpg/);
+
+      thumbnails.get(0).click();
+      expect(mainImage.getAttribute('src')).toMatch(/img\/suits\/sunshine-long-beach-suit.0.jpg/);
+    });
+
   });
 
 });

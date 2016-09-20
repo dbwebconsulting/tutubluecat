@@ -12,13 +12,22 @@ angular.
       function SuitDetailController($http, $routeParams, $scope) {
         var self = this;
 
-        $http.get('suits/' + $routeParams.suitId + '.json').
-        then(function(response) {
-          self.suit = response.data;
+        self.setImage = function setImage(imageUrl) {
+          self.mainImageUrl = imageUrl;
+        };
+
+        self.onMouseover = function onMouseover(imageUrl) {
+          self.message = 'Click thumbnail to display larger image.'
+        };
 
         $scope.mydate = new Date();
         var numberOfDaysToAdd = 3;
         $scope.shipdate = $scope.mydate.setDate($scope.mydate.getDate() + numberOfDaysToAdd);
+
+        $http.get('suits/' + $routeParams.suitId + '.json').
+        then(function(response) {
+          self.suit = response.data;
+          self.setImage(self.suit.images[0]);
         });
       }
     ]
