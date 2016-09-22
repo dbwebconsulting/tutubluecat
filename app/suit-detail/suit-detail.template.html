@@ -19,7 +19,7 @@
     <span>Availability</span>
     <dl>
       <dd class="availability">{{$ctrl.suit.availability.available | checkmark}}</dd> <!-- ng-repeat="availability in $ctrl.suit.availability"-->
-      <dd class="availability">{{$ctrl.suit.availability.available}}</dd>
+      <dd class="availability">{{$ctrl.suit.availability.status}}</dd>
       <dt>Ready to Ship: {{shipdate | date:'MM/dd/yyyy'}}</dt>
     </dl>
   </li>
