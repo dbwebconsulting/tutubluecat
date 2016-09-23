@@ -5,5 +5,6 @@
 
 // define the `suitDetail` module
 angular.module('suitDetail', [
-    'ngRoute'
+    'ngRoute',
+    'core.suit'
 ]);

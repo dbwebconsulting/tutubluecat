@@ -8,16 +8,10 @@ angular.
   module('suitList').
   component('suitList', {
     templateUrl: 'suit-list/suit-list.template.html',
-    controller: ['$http',
-      function PhoneListController($http) {
-        var self = this;
-        self.orderProp = 'age';
-
-
-        $http.get('suits/suits.json').then(function (response) {
-          self.suits = response.data;
-          //self.suits = response.data.slice(0, 5);  limit result set
-        });
+    controller: ['Suit',
+      function SuitListController(Suit) {
+        this.suits = Suit.query();
+        this.orderProp = 'age';
       }
     ]
   });

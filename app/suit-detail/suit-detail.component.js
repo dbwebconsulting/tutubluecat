@@ -8,9 +8,12 @@ angular.
   module('suitDetail').
   component('suitDetail', {
     templateUrl: 'suit-detail/suit-detail.template.html',
-    controller: ['$http', '$routeParams', '$scope',
-      function SuitDetailController($http, $routeParams, $scope) {
+    controller: ['$routeParams', 'Suit', '$scope',
+      function  SuitDetailController($routeParams, Suit, $scope) {
         var self = this;
+        self.suit = Suit.get({suitId: $routeParams.suitId}, function (suit) {
+          self.setImage(suit.images[0]);
+        });
 
         self.setImage = function setImage(imageUrl) {
           self.mainImageUrl = imageUrl;
@@ -23,12 +26,6 @@ angular.
         $scope.mydate = new Date();
         var numberOfDaysToAdd = 3;
         $scope.shipdate = $scope.mydate.setDate($scope.mydate.getDate() + numberOfDaysToAdd);
-
-        $http.get('suits/' + $routeParams.suitId + '.json').
-        then(function(response) {
-          self.suit = response.data;
-          self.setImage(self.suit.images[0]);
-        });
       }
     ]
   });

@@ -4,4 +4,4 @@
 "use strict";
 
 // define the suitList module
-angular.module('suitList', []);
+angular.module('suitList', ['core.suit']);

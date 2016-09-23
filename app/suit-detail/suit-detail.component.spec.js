@@ -16,7 +16,6 @@ describe('suitDetail', function () {
     beforeEach(inject(function ($componentController,
     _$httpBackend_, $routeParams) {
       $httpBackend = _$httpBackend_;
-
       $httpBackend.expectGET('suits/xyz.json').respond(xyzSuitData);
 
       $routeParams.suitId = 'xyz';
@@ -25,7 +24,9 @@ describe('suitDetail', function () {
     }));
 
     it('should fetch the suit details', function () {
-      expect(ctrl.suit).toBeUndefined();
+      jasmine.addCustomEqualityTester(angular.equals);
+
+      expect(ctrl.suit).toEqual({});
 
       $httpBackend.flush();
       expect(ctrl.suit).toEqual(xyzSuitData);
