@@ -6,6 +6,7 @@
 // define the suitcatApp module
 angular.module('suitcatApp', [
     // depends on various modules
+    'ngAnimate',
     'ngRoute',
     'core',
     'suitDetail',

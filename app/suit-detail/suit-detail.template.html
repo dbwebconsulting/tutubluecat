@@ -1,7 +1,12 @@
-<figure>
-  <img src="{{$ctrl.mainImageUrl}}" title="{{$ctrl.suit.name}}" class="suit" />
+<!--<div>-->
+  <figure class="suit-images">
+    <img ng-src="{{img}}" title="{{$ctrl.suit.name}}" class="suit"
+         ng-class="{selected: img === $ctrl.mainImageUrl}"
+         ng-repeat="img in $ctrl.suit.images" />
+  </figure>
   <figcaption>{{$ctrl.suit.caption}}</figcaption>
-</figure>
+
+<!--</div>-->
 
 <h1>{{$ctrl.suit.name}}</h1>
 

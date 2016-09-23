@@ -4,6 +4,7 @@ body {
 
 h1 {
   border-bottom: solid #666 1px;
+  margin-top: 0;
 }
 
 /* View: suit list */
@@ -38,14 +39,29 @@ select[title="sort"] {
 /* View: Suit Detail */
 .suit {
   background-color: #fff;
-  border: solid #000 1px;
+  display: none;
   float: left;
-  height: 575px; /*750px*/
+  height: 525px; /*750px*/
   margin-bottom: 1em;
   margin-right: 3em;
   padding: 2em;
   width: 400px; /*500px*/
   clear: both;
+}
+
+.suit:first-child {
+  display: block;
+}
+
+.suit-images {
+  background-color: white;
+  border: solid #666 1px;
+  float: left;
+  height: 550px; /*450px*/
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+ margin-right: 20px;
 }
 
 .suit-thumbs {
@@ -65,6 +81,13 @@ select[title="sort"] {
   cursor: pointer;
   display: inline-block;
   margin: 1em;
+}
+
+.specs {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .specs dt {
@@ -87,13 +110,19 @@ p:first-child {
 }
 
 figure {
-  float: left;
+  /*float: left;*/
   /*display: inline-block;*/
-  width: 410px;
+  /*width: 410px;
   height: 625px;
-  margin-right: 10px;
+  margin-right: 10px;*/
   /*margin-inside: 10px;
   border: 1px dashed #73AD21*/;
+}
+
+figcaption {
+  float: left;
+  max-width: 400px;
+  clear: both;
 }
 
 .availability {
